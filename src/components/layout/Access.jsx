@@ -26,11 +26,11 @@ export const links_nav_branch =  [
 /* Links Secciones */
 
 export const links_nav_sections = [
-    {name:"Reportes" ,      link : "./reportes",        icon : <EqualizerIcon              sx={{color:"#40c4ff"}} /> },
-    {name:"Productos" ,     link : "./productos" ,      icon : <ViewInArIcon               sx={{color:"#40c4ff"}}/> },
-    {name:"Pedidos" ,       link : "./pedidos" ,        icon : <ContentPasteIcon           sx={{color:"#40c4ff"}}/>} ,
-    {name:"Envios" ,        link : "./envios" ,         icon : <MopedOutlinedIcon          sx={{color:"#40c4ff"}}/>},
-    {name:"Proveedores" ,   link : "./proveedores" ,    icon : <LocalShippingOutlinedIcon  sx={{color:"#40c4ff"}}/>}
+    {name:"Reportes" ,      link : "/reportes",        icon : <EqualizerIcon              sx={{color:"#40c4ff"}} /> },
+    {name:"Productos" ,     link : "/productos" ,      icon : <ViewInArIcon               sx={{color:"#40c4ff"}}/> },
+    {name:"Pedidos" ,       link : "/pedidos" ,        icon : <ContentPasteIcon           sx={{color:"#40c4ff"}}/>} ,
+    {name:"Envios" ,        link : "/envios" ,         icon : <MopedOutlinedIcon          sx={{color:"#40c4ff"}}/>},
+    {name:"Proveedores" ,   link : "/proveedores" ,    icon : <LocalShippingOutlinedIcon  sx={{color:"#40c4ff"}}/>}
 
 ]
 
@@ -38,29 +38,25 @@ export const links_nav_sections = [
 
 export const links_nav_config = [
     {name:"Mi Tienda", 
-     link : "./miTienda/configuracion-de-tienda" , 
+     link : "/miTienda/configuracion-de-tienda" , 
      icon : <StoreIcon sx={{color:"#40c4ff"}}/>, 
      subLink : [
-        {name:"Configuración " ,   link : "./miTienda/configuracion-de-tienda",   icon : <SettingsSuggestIcon           sx={{ fontSize: 16,color:"#40c4ff" }}/>},
-        {name:"Personalizacion" ,  link : "./miTienda/personalizacion" ,          icon : <BrushIcon                     sx={{ fontSize: 16,color:"#40c4ff" }}/>},
-        {name:"Redes Sociales" ,   link : "./miTienda/redes-sociales" ,           icon : <ShareIcon                     sx={{ fontSize: 16,color:"#40c4ff" }}/>},
-        {name:"Metodos de Pago" ,  link : "./miTienda/metodos-de-pagos" ,         icon : <PaymentsOutlinedIcon          sx={{ fontSize: 16,color:"#40c4ff" }}/>},
-        {name:"Mi Plan" ,          link : "./miTienda/mi-plan" ,                  icon : <FormatListBulletedIcon        sx={{ fontSize: 16,color:"#40c4ff" }}/>},
-        {name:"Apagar tienda" ,    link : "./miTienda/apagar-temporalmente" ,     icon : <HistoryToggleOffIcon          sx={{ fontSize: 16,color:"#40c4ff" }}/>},
-        {name:"Dar de baja" ,      link : "./miTienda/baja" ,                     icon : <CreditCardOffOutlinedIcon     sx={{ fontSize: 16,color:"#40c4ff" }}/>}
+        {name:"Configuración " ,   link : "/miTienda/configuracion-de-tienda",   icon : <SettingsSuggestIcon           sx={{ fontSize: 16,color:"#40c4ff" }}/>},
+        {name:"Personalizacion" ,  link : "/miTienda/personalizacion" ,          icon : <BrushIcon                     sx={{ fontSize: 16,color:"#40c4ff" }}/>},
+        {name:"Redes Sociales" ,   link : "/miTienda/redes-sociales" ,           icon : <ShareIcon                     sx={{ fontSize: 16,color:"#40c4ff" }}/>},
+        {name:"Metodos de Pago" ,  link : "/miTienda/metodos-de-pagos" ,         icon : <PaymentsOutlinedIcon          sx={{ fontSize: 16,color:"#40c4ff" }}/>},
+        {name:"Mi Plan" ,          link : "/miTienda/mi-plan" ,                  icon : <FormatListBulletedIcon        sx={{ fontSize: 16,color:"#40c4ff" }}/>},
+        {name:"Apagar tienda" ,    link : "/miTienda/apagar-temporalmente" ,     icon : <HistoryToggleOffIcon          sx={{ fontSize: 16,color:"#40c4ff" }}/>},
+        {name:"Dar de baja" ,      link : "/miTienda/baja" ,                     icon : <CreditCardOffOutlinedIcon     sx={{ fontSize: 16,color:"#40c4ff" }}/>}
      ]
     },
     {name:"Configuracion", 
-     link : "./configuracion/cuenta" , 
+     link : "/configuracion/cuenta" , 
      icon : <SettingsIcon sx={{color:"#40c4ff"}}/>,
      subLink : [
-        {name:"Cuenta" ,      link : "./configuracion/cuenta",        icon : <ManageAccountsOutlinedIcon    sx={{ fontSize: 16,color:"#40c4ff" }}/> },
-        {name:"Privacidad" ,  link : "./configuracion/privacidad" ,   icon : <LockOutlinedIcon              sx={{ fontSize: 16,color:"#40c4ff" }}/> },
-        {name:"Ayuda" ,       link : "./configuracion/ayuda" ,        icon : <HelpOutlineIcon               sx={{ fontSize: 16,color:"#40c4ff" }}/>} ,
+        {name:"Cuenta" ,      link : "/configuracion/cuenta",        icon : <ManageAccountsOutlinedIcon    sx={{ fontSize: 16,color:"#40c4ff" }}/> },
+        {name:"Privacidad" ,  link : "/configuracion/privacidad" ,   icon : <LockOutlinedIcon              sx={{ fontSize: 16,color:"#40c4ff" }}/> },
+        {name:"Ayuda" ,       link : "/configuracion/ayuda" ,        icon : <HelpOutlineIcon               sx={{ fontSize: 16,color:"#40c4ff" }}/>} ,
      ]
     },
 ]
-
-
-
-

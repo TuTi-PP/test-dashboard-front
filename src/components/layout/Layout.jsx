@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import { styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -6,10 +5,11 @@ import NavVertical from './navVertical/NavVertical';
 import NavHorizontal from './navHorizontal/NavHorizontal';
 import { Outlet } from 'react-router-dom';
 import {useMediaQuery } from '@mui/material';
-
-
+import { useEffect } from 'react';
+import { useTheme } from '@mui/material/styles';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
   padding: theme.spacing(0, 1),
@@ -18,30 +18,47 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 const Layout = () => {
-  const isSmallerThan600 = useMediaQuery('(max-width:600px)');
-  const [open, setOpen] = React.useState(!isSmallerThan600);
-    
+  const theme = useTheme();
+
+  const [open, setOpen] = React.useState(!useMediaQuery('(max-width:600px)'));
+  const [isSmallerThan600, setIsSmallerThan600] = React.useState(
+    useMediaQuery('(max-width:600px)')
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallerThan600(window.innerWidth < theme.breakpoints.values.sm);
+      setOpen(isSmallerThan600);
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [theme.breakpoints.values.sm]);
+
   const desplegar = () => {
     setOpen(false);
   };
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <NavVertical open={open} setOpen={setOpen} />
+      <NavVertical open={ open } setOpen={ setOpen }/>
+      
+      <NavHorizontal 
+        anchor='left' 
+        open= { open } 
+        setOpen= { setOpen } 
+        isSmallerThan600 = { isSmallerThan600 }
+        setIsSmallerThan600 = { setIsSmallerThan600 }
+      />
 
-        <NavHorizontal 
-            anchor="left" 
-            open={open} 
-            setOpen={setOpen} 
-        />
-
-        <Box component="main" sx={{ flexGrow: 1, p: 3 , bgcolor:"#f2f5f9", height:"100vh"}} onClick={ desplegar}>
-          <DrawerHeader />
-          <Outlet/>
-        </Box>
-
+      <Box component='main' sx={{ flexGrow: 1, p: 3, bgcolor:'#f2f5f9', height:'100vh' }} onClick={ desplegar }>
+        <DrawerHeader />
+        <Outlet/>
+      </Box>
     </Box>
   )
 }
 
-export default Layout
+export default Layout;

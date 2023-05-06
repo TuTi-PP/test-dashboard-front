@@ -9,13 +9,14 @@
 
 ::-webkit-scrollbar {
   width: 7px;
+  background-color: rgb(42, 38, 59);
 }
 ::-webkit-scrollbar-button {
   width: 0px;
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #6975867a;
+  background: #555f6d71;
   border-radius: 8px;
 }
 ::-webkit-scrollbar:active {

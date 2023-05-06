@@ -14,7 +14,6 @@ const LinksSections = (props) => {
       {props.links_nav_sections.map((index, key) => (
         <ListItem key={ key } disablePadding sx={{ display: 'block' }} onClick={() => {
           navigate(index.link); 
-          props.handleDrawerClose();    
         }}>
           <ListItemButton color='#ff5252' sx={{ minHeight: 48, justifyContent: props.open ? 'initial' : 'center', px: props.px }}>
             <ListItemIcon sx={{ minWidth: 0, mr: props.open ? 3 : 'auto', justifyContent: 'center' }}>

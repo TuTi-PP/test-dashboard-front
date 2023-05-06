@@ -10,7 +10,6 @@ import { links_nav_config , links_nav_sections } from '../Access';
 import Button from '@mui/material/Button';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Box from '@mui/material/Box';
-import { Drawer } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useEffect } from 'react';
 import NavHorizontalMobile from './navHorizontalMobile/NavHorizontalMobile';
@@ -56,44 +55,43 @@ const NavHorizontal = ({ open, setOpen, isSmallerThan600, setIsSmallerThan600 })
   return (
     (!isSmallerThan600) ?
       
-    <NavHorizontalDesktop 
-      DrawerHeader = { DrawerHeader }
-      Typography = { Typography }
-      IconButton = { IconButton }
-      Divider = { Divider }
-      Box = { Box }
-      LinksSections = { LinksSections }
-      LinksSettings = { LinksSettings }
-      Button = { Button }
-      links_nav_sections = { links_nav_sections }
-      links_nav_config = { links_nav_config }
-      handleDrawerClose = { handleDrawerClose }
-      LogoutIcon = { LogoutIcon }
-      ChevronLeftIcon = { ChevronLeftIcon }
-      open= { open }
-    /> 
+      <NavHorizontalDesktop 
+        DrawerHeader = { DrawerHeader }
+        Typography = { Typography }
+        IconButton = { IconButton }
+        Divider = { Divider }
+        Box = { Box }
+        LinksSections = { LinksSections }
+        LinksSettings = { LinksSettings }
+        Button = { Button }
+        links_nav_sections = { links_nav_sections }
+        links_nav_config = { links_nav_config }
+        handleDrawerClose = { handleDrawerClose }
+        LogoutIcon = { LogoutIcon }
+        ChevronLeftIcon = { ChevronLeftIcon }
+        open= { open }
+      /> 
 
     :
 
-    <NavHorizontalMobile 
-      Drawer = { Drawer }
-      DrawerHeader = { DrawerHeader }
-      Typography = { Typography }
-      IconButton = { IconButton }
-      Divider = { Divider }
-      Box = { Box }
-      LinksSections = { LinksSections }
-      LinksSettings = { LinksSettings }
-      Button = { Button }
-      links_nav_sections = { links_nav_sections }
-      links_nav_config = { links_nav_config }
-      handleDrawerClose = { handleDrawerClose }
-      LogoutIcon = { LogoutIcon }
-      ChevronLeftIcon = { ChevronLeftIcon }
-      drawerWidth = { drawerWidth }
-      open= { open }
-      setOpen= { setOpen }
-    />
+      <NavHorizontalMobile 
+        DrawerHeader = { DrawerHeader }
+        Typography = { Typography }
+        IconButton = { IconButton }
+        Divider = { Divider }
+        Box = { Box }
+        LinksSections = { LinksSections }
+        LinksSettings = { LinksSettings }
+        Button = { Button }
+        links_nav_sections = { links_nav_sections }
+        links_nav_config = { links_nav_config }
+        handleDrawerClose = { handleDrawerClose }
+        LogoutIcon = { LogoutIcon }
+        ChevronLeftIcon = { ChevronLeftIcon }
+        drawerWidth = { drawerWidth }
+        open= { open }
+        setOpen= { setOpen }
+      />
   )
 }
 

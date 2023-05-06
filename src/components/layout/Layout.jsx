@@ -1,12 +1,16 @@
 import * as React from 'react';
 import { styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import NavVertical from './navVertical/NavVertical';
-import NavHorizontal from './navHorizontal/NavHorizontal';
 import { Outlet } from 'react-router-dom';
 import {useMediaQuery } from '@mui/material';
 import { useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
+import Loading from '../assets/Loading';
+
+const NavHorizontal = React.lazy(() => import("./navHorizontal/NavHorizontal"))
+const NavVertical = React.lazy(() => import("./navVertical/NavVertical"))
+
+
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -42,22 +46,24 @@ const Layout = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <NavVertical open={ open } setOpen={ setOpen }/>
-      
-      <NavHorizontal 
-        anchor='left' 
-        open= { open } 
-        setOpen= { setOpen } 
-        isSmallerThan600 = { isSmallerThan600 }
-        setIsSmallerThan600 = { setIsSmallerThan600 }
-      />
+    <React.Suspense fallback={<Loading/>}>
+      <Box sx={{ display: 'flex' }}>
+        <NavVertical open={ open } setOpen={ setOpen }/>
+        
+        <NavHorizontal 
+          anchor='left' 
+          open= { open } 
+          setOpen= { setOpen } 
+          isSmallerThan600 = { isSmallerThan600 }
+          setIsSmallerThan600 = { setIsSmallerThan600 }
+        />
 
-      <Box component='main' sx={{ flexGrow: 1, p: 3, bgcolor:'#f2f5f9', height:'100vh' }} onClick={ desplegar }>
-        <DrawerHeader />
-        <Outlet/>
+        <Box component='main' sx={{ flexGrow: 1, p: 3, bgcolor:'#f2f5f9', height:'100vh' }} onClick={ desplegar }>
+          <DrawerHeader />
+          <Outlet/>
+        </Box>
       </Box>
-    </Box>
+    </React.Suspense>
   )
 }
 

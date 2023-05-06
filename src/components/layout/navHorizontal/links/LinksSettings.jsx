@@ -14,7 +14,6 @@ const LinksConfig = (props) => {
             link= { index.link }
             subLink= { index.subLink } 
             open= { props.open }
-            handleDrawerClose= { props.handleDrawerClose }
           />
         </ListItem> 
       ))}

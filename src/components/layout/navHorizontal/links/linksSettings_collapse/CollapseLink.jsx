@@ -44,7 +44,7 @@ const CollapseLink = (props) => {
       </ListItemButton>
 
       {props.subLink.map((subLinkItem, key) => (
-        <Collapse key={key} in={openList} timeout="auto" unmountOnExit onClick={props.handleDrawerClose}>
+        <Collapse key={key} in={openList} timeout="auto" unmountOnExit >
           <List component="div" disablePadding>
             <ListItemButton sx={{ pl: 6, opacity: props.open ? 1 : 0 }}  onClick={() => { navigate(subLinkItem.link) }} >
               <ListItemIcon sx={{ minWidth: 0, mr: 2, justifyContent: 'center' }}>   {subLinkItem.icon}    </ListItemIcon>

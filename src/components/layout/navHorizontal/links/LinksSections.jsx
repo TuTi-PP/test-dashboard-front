@@ -19,7 +19,7 @@ const LinksSections = (props) => {
             <ListItemIcon sx={{ minWidth: 0, mr: props.open ? 3 : 'auto', justifyContent: 'center' }}>
               { index.icon }
             </ListItemIcon>
-            <ListItemText primary={ index.name } disableTypography sx={{ opacity: props.open ? 1 : 0, color: '#efefef', fontWeight: '600', letterSpacing: '.2px', fontSize: '1.04rem' }}/>
+            <ListItemText primary={ index.name } disableTypography sx={{ opacity: props.open ? 1 : 0, color: '#efefef', fontWeight: '600', letterSpacing: '.2px', fontSize: '1.04rem' }} />
           </ListItemButton>
         </ListItem>
       ))}

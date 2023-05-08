@@ -90,7 +90,6 @@ const NavHorizontal = ({ open, setOpen, isSmallerThan600, setIsSmallerThan600 })
         ChevronLeftIcon = { ChevronLeftIcon }
         drawerWidth = { drawerWidth }
         open= { open }
-        setOpen= { setOpen }
       />
   )
 }

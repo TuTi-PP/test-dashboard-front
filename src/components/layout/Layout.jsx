@@ -29,7 +29,14 @@ const Layout = () => {
     useMediaQuery('(max-width:600px)')
   );
 
+  const desplegar = () => {
+    setOpen(false);
+  };
+
+
   useEffect(() => {
+    desplegar()
+
     const handleResize = () => {
       setIsSmallerThan600(window.innerWidth < theme.breakpoints.values.sm);
       setOpen(isSmallerThan600);
@@ -41,9 +48,7 @@ const Layout = () => {
     };
   }, [theme.breakpoints.values.sm]);
 
-  const desplegar = () => {
-    setOpen(false);
-  };
+
 
   return (
     <React.Suspense fallback={<Loading/>}>

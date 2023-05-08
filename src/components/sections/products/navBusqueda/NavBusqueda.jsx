@@ -1,8 +1,8 @@
 import React  from 'react'
 import AppBar from '@mui/material/AppBar';
 import { Box} from '@mui/material';
-import { Filter_select } from '../../../assets/buttons/Buttons';
-import { data_categorys,  data_stock, data_visible } from '../../../assets/buttons/Buttons';
+import { Filter_select } from '../../../assets/filters/Filters';
+import { data_categorys,  data_stock, data_visible } from '../../../assets/filters/Filters';
 
 const NavBusqueda = () => {
     return (

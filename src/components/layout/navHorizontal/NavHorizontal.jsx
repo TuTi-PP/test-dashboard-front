@@ -35,22 +35,28 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
+
+
+
+
  
-const NavHorizontal = ({ open, setOpen, isSmallerThan600, setIsSmallerThan600 }) => {
+const NavHorizontal = ({ open, setOpen, isSmallerThan600, setIsSmallerThan600, hide }) => {
+  
   const theme = useTheme();
 
-  const handleDrawerClose = () => {
-    setOpen(!open);
-  };
 
   useEffect(() => {
     setIsSmallerThan600(window.innerWidth < theme.breakpoints.values.sm);
     setOpen(!isSmallerThan600);
   }, [theme.breakpoints.values.sm]);
 
+
+
   useEffect(() => {
     setOpen(open);
   }, [open]);
+
+
 
   return (
     (!isSmallerThan600) ?
@@ -66,7 +72,7 @@ const NavHorizontal = ({ open, setOpen, isSmallerThan600, setIsSmallerThan600 })
         Button = { Button }
         links_nav_sections = { links_nav_sections }
         links_nav_config = { links_nav_config }
-        handleDrawerClose = { handleDrawerClose }
+        hide = { hide }
         LogoutIcon = { LogoutIcon }
         ChevronLeftIcon = { ChevronLeftIcon }
         open= { open }
@@ -85,7 +91,7 @@ const NavHorizontal = ({ open, setOpen, isSmallerThan600, setIsSmallerThan600 })
         Button = { Button }
         links_nav_sections = { links_nav_sections }
         links_nav_config = { links_nav_config }
-        handleDrawerClose = { handleDrawerClose }
+        hide = { hide }
         LogoutIcon = { LogoutIcon }
         ChevronLeftIcon = { ChevronLeftIcon }
         drawerWidth = { drawerWidth }

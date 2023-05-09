@@ -36,13 +36,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const NavHorizontalDesktop = ({ open, DrawerHeader, Typography, IconButton, Divider, Box, LinksSections, 
-    LinksSettings, Button, links_nav_config, ChevronLeftIcon, LogoutIcon, links_nav_sections, handleDrawerClose }) => {
+    LinksSettings, Button, links_nav_config, ChevronLeftIcon, LogoutIcon, links_nav_sections, hide }) => {
 
   return (
     <Drawer variant='permanent' open={ open } >
       <DrawerHeader  sx={{ display: 'flex' , justifyContent: 'space-between' }}>
         <Typography variant='h1' noWrap component='div' ml={ 2 } fontWeight={ '600' } fontSize={ '1.06rem' } color={ 'white' }>Nombre Sucursal</Typography>
-        <IconButton onClick={ handleDrawerClose }>{<ChevronLeftIcon sx={{ color: 'white' }}/>}</IconButton>
+        <IconButton onClick={ hide }>{<ChevronLeftIcon sx={{ color: 'white' }}/>}</IconButton>
       </DrawerHeader>
 
       <Divider color='#444444'/>
@@ -50,11 +50,11 @@ const NavHorizontalDesktop = ({ open, DrawerHeader, Typography, IconButton, Divi
       <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
         <Box sx={{ flexGrow: 1 }}>
 
-          <LinksSections open={ open } links_nav_sections={ links_nav_sections } sx={{ marginTop: '2rem' }} handleDrawerClose={ handleDrawerClose } px={ 2.5 }/>
+          <LinksSections open={ open } links_nav_sections={ links_nav_sections } sx={{ marginTop: '2rem' }} hide={ hide } px={ 2.5 }/>
           
           <Divider color='#444444'/>
 
-          <LinksSettings open={ open } links_nav_config={ links_nav_config } handleDrawerClose={ handleDrawerClose } px={ .5 } />
+          <LinksSettings open={ open } links_nav_config={ links_nav_config } hide={ hide } px={ .5 } />
         </Box>
 
         <Box sx={{ my: .5, mt: 6 }}>

@@ -6,6 +6,7 @@ import {useMediaQuery } from '@mui/material';
 import { useEffect } from 'react';
 import { useTheme } from '@mui/material/styles';
 import Loading from '../assets/Loading';
+import { useBookStore } from '../../global/UseGlobal';
 
 const NavHorizontal = React.lazy(() => import("./navHorizontal/NavHorizontal"))
 const NavVertical = React.lazy(() => import("./navVertical/NavVertical"))
@@ -29,14 +30,16 @@ const Layout = () => {
     useMediaQuery('(max-width:600px)')
   );
 
-  const desplegar = () => {
-    setOpen(false);
+
+
+ const value = useBookStore(state => state.value )
+
+  const hide = () => {
+    setOpen(value);
   };
 
 
-  useEffect(() => {
-    desplegar()
-
+  useEffect(() => { 
     const handleResize = () => {
       setIsSmallerThan600(window.innerWidth < theme.breakpoints.values.sm);
       setOpen(isSmallerThan600);
@@ -58,12 +61,13 @@ const Layout = () => {
         <NavHorizontal 
           anchor='left' 
           open= { open } 
+          hide={hide}
           setOpen= { setOpen } 
           isSmallerThan600 = { isSmallerThan600 }
           setIsSmallerThan600 = { setIsSmallerThan600 }
         />
 
-        <Box component='main' sx={{ flexGrow: 1, p: 3, bgcolor:'#f2f5f9', height:'100vh' }} onClick={ desplegar }>
+        <Box component='main' sx={{ flexGrow: 1, p: 3, bgcolor:'#f2f5f9', height:'100vh' }} onClick={ hide }>
           <DrawerHeader />
           <Outlet/>
         </Box>
